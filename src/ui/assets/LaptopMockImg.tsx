@@ -1,8 +1,13 @@
-export const LaptopMockImg = () => {
+interface ILaptopMockImg {
+  width?: string;
+  height?: string;
+}
+
+export const LaptopMockImg = ({ width, height }: ILaptopMockImg) => {
     return (
       <svg
-      width="1080"
-      height="655"
+      width={width}
+      height={height}
       viewBox="0 0 1080 655"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
