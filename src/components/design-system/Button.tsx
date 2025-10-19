@@ -9,6 +9,8 @@ interface IButtonProps {
   borderRadius: string;
   padding: string;
   onClick: () => void;
+  color: string;
+  fontWeight?: string;
 }
 
 export const Button = ({
@@ -19,6 +21,8 @@ export const Button = ({
   onClick,
   borderRadius,
   padding,
+  color,
+  fontWeight,
 }: IButtonProps) => {
   return (
     <ButtonContainer
@@ -28,17 +32,23 @@ export const Button = ({
       onClick={onClick}
       borderRadius={borderRadius}
       padding={padding}
+      color={color}
+      fontWeight={fontWeight}
     >
       {children}
     </ButtonContainer>
   );
 };
 
-const ButtonContainer = styled.button<Omit<IButtonProps, "onClick" | "children" >> `
-  width: ${({width}) => width};
-  height: ${({height}) => height};
-  background-color: ${({backgroundColor}) => backgroundColor};
-  border-radius: ${({borderRadius}) => borderRadius};
+const ButtonContainer = styled.button<Omit<IButtonProps, "onClick" | "children">>`
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
+  background-color: ${({ backgroundColor }) => backgroundColor};
+  border-radius: ${({ borderRadius }) => borderRadius};
   display: flex;
-  padding: ${({padding}) => padding}
-`
+  padding: ${({ padding }) => padding};
+  border: none;
+  color: ${({ color }) => color};
+  font-weight: ${({ fontWeight }) => fontWeight};
+  justify-content: center;
+`;
