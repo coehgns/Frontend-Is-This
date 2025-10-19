@@ -7,6 +7,7 @@ interface IButtonProps {
   height: string;
   backgroundColor?: string;
   borderRadius: string;
+  padding: string;
   onClick: () => void;
 }
 
@@ -17,6 +18,7 @@ export const Button = ({
   backgroundColor = "gray",
   onClick,
   borderRadius,
+  padding,
 }: IButtonProps) => {
   return (
     <ButtonContainer
@@ -25,20 +27,18 @@ export const Button = ({
       backgroundColor={backgroundColor}
       onClick={onClick}
       borderRadius={borderRadius}
+      padding={padding}
     >
       {children}
     </ButtonContainer>
   );
 };
 
-const ButtonContainer = styled.div<{
-  width: string;
-  height: string;
-  backgroundColor: string;
-  borderRadius: string;
-}>`
-  width: ${({ width }) => width};
-  height: ${({ height }) => height};
-  background-color: ${({ backgroundColor }) => backgroundColor};
-  border-radius: ${({ borderRadius }) => borderRadius};
-`;
+const ButtonContainer = styled.button<Omit<IButtonProps, "onClick" | "children" >> `
+  width: ${({width}) => width};
+  height: ${({height}) => height};
+  background-color: ${({backgroundColor}) => backgroundColor};
+  border-radius: ${({borderRadius}) => borderRadius};
+  display: flex;
+  padding: ${({padding}) => padding}
+`
