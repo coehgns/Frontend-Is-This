@@ -1,11 +1,6 @@
-interface IDaedongLogo {
-  onClick?: () => void;
-}
-
-export const DaedongLogo = ({ onClick }: IDaedongLogo) => {
+export const DaedongLogo = () => {
   return (
     <svg
-      onClick={onClick}
       width="22"
       height="18"
       viewBox="0 0 22 18"
