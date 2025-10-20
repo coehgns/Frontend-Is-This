@@ -1,11 +1,13 @@
 interface IDownArrow {
   width: string;
   height: string;
+  className?: string;
 }
 
-export const DownArrow = ({ width, height }: IDownArrow) => {
+export const DownArrow = ({ width, height, className }: IDownArrow) => {
   return (
     <svg
+      className={className}
       width={width}
       height={height}
       viewBox="0 0 61 19"
