@@ -7,16 +7,16 @@ export const Header = () => {
 
   return (
     <HeaderContainer>
-      <LogoContainer onClick={() => navigate('/')}>
+      <LogoContainer onClick={() => navigate("/")}>
         <DaedongLogo />
         <LogoText>대동여지도</LogoText>
       </LogoContainer>
       <NavContainer>
         <NavServeContainer>
-          <NavContent onClick={() => navigate('/notice')}>공고</NavContent>
-          <NavContent onClick={() => navigate('/club')}>동아리</NavContent>
+          <NavContent onClick={() => navigate("/notice")}>공고</NavContent>
+          <NavContent onClick={() => navigate("/club")}>동아리</NavContent>
         </NavServeContainer>
-        <NavContent onClick={() => navigate('/login')}>로그인</NavContent>
+        <NavContent onClick={() => navigate("/login")}>로그인</NavContent>
       </NavContainer>
     </HeaderContainer>
   );
@@ -35,6 +35,7 @@ const LogoContainer = styled.div`
 const HeaderContainer = styled.div`
   display: flex;
   padding: 20px 0px;
+  border-bottom: 1px solid #9c9898;
 `;
 
 const NavContainer = styled.div`
